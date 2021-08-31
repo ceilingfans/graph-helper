@@ -7,7 +7,12 @@
  * @param { Function } fn Formula for Y 
  */
 const getTable = (min, max, inc, fn) => {
-	if (min > max) return console.error("{min} should be less than {max}");
+	if (min > max) {
+		const tmp = min;
+		min = max;
+		max = tmp;
+		console.warn("Please ensure that {min} is less than {max} next time");
+	}
 
 	const tableItems = [];
 	for (min; min < max; min += inc) {
@@ -20,7 +25,7 @@ const getTable = (min, max, inc, fn) => {
 }
 
 getTable(
-	-3.5,
+	13.5,
 	3.5,
 	0.5,
 	x => x**2 + 4*x + 10,
