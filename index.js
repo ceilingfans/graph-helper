@@ -15,7 +15,7 @@ const getTable = (min, max, inc, fn) => {
 	}
 
 	const tableItems = [];
-	for (min; min < max; min += inc) {
+	for (min; min <= max; min += inc) {
 		tableItems.push(
 			{ x: min, y: fn(min) }
 		);
@@ -25,8 +25,8 @@ const getTable = (min, max, inc, fn) => {
 }
 
 getTable(
-	13.5,
-	3.5,
-	0.5,
-	x => x**2 + 4*x + 10,
+	0,
+	180,
+	30,
+	x => Math.sin(x),
 );
