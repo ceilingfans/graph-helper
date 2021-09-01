@@ -7,6 +7,10 @@
  * @param { Function } fn Formula for Y 
  */
 const getTable = (min, max, inc, fn) => {
+	if (!(typeof min === Number && typeof max === Number && typeof inc === Number && typeof inc Function)) {
+		return console.error("Invalid Typing");
+	}
+	
 	if (min > max) {
 		const tmp = min;
 		min = max;
